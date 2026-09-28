@@ -22,7 +22,7 @@
   <!-- Navigation Bar -->
   <nav class="navbar navbar-expand-lg fixed-top navbar-custom py-2">
     <div class="container">
-      <a class="navbar-brand logo-text" href="#top">M. RENALDY R.</a>
+      <a class="navbar-brand logo-text" href="#top">RENALDY</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -30,19 +30,19 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-1">
           <li class="nav-item">
-            <a class="nav-link active-link" href="#profile">Profile</a>
+            <a class="nav-link active-link" href="#top">Profile</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active-link" href="#projects-section">Projects</a>
+            <a class="nav-link" href="javascript:void(0)" onclick="selectTab('projects', true)">Projects</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active-link" href="#career-section">Career</a>
+            <a class="nav-link" href="javascript:void(0)" onclick="selectTab('career', true)">Career</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active-link" href="#skills-section">Skills</a>
+            <a class="nav-link" href="javascript:void(0)" onclick="selectTab('skills', true)">Skills</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active-link" href="#contact-section">Contact</a>
+            <a class="nav-link" href="javascript:void(0)" onclick="selectTab('contact', true)">Contact</a>
           </li>
         </ul>
       </div>
@@ -77,7 +77,7 @@
 
       <!-- About Me Statement -->
       <div id="about_me">
-        Welcome to my interactive portfolio! I am a passionate Game &amp; Fullstack Developer with over 2 years of experience creating immersive experiences in C#, C++, Unity, Unreal, and Web stack technologies.
+        Game Developer with rich experience crafting interactive game systems across Unity, Unreal Engine, Godot, and Roblox Studio. Proficient in C#, Lua, JavaScript, HTML/CSS, and GLSL shaders, coupled with 3D asset creation in Blender and 2D design in Aseprite. Passionate about architecting scalable mechanics, graphics optimization, and shipping engaging player experiences.
       </div>
 
       <!-- Action Buttons -->
@@ -85,7 +85,7 @@
         <a href="./assets\MUHAMMAD RENALDY_RAHADIANSYAH_Resume.pdf" target="_blank" class="btn-action-primary">
           <i class="fa fa-download"></i> Download CV
         </a>
-        <a href="#contact-section" class="btn-action-secondary">
+        <a href="javascript:void(0)" onclick="selectTab('contact', true)" class="btn-action-secondary">
           <i class="fa fa-paper-plane"></i> Contact Me
         </a>
       </div>
@@ -106,188 +106,6 @@
       <div id="data_selection_area" class="container"></div>
       <div id="project_data_area" class="container"></div>
 
-    </div>
-  </section>
-
-  <!-- Full Projects Grid Section -->
-  <section id="projects-section" class="py-5">
-    <div class="container">
-      <div class="text-center mb-5">
-        <div id="skill-chart-title">Featured Game Projects</div>
-        <p class="text-muted">Explore my published titles &amp; Game Jam creations</p>
-      </div>
-
-      <div class="row g-4">
-        <!-- Retro Night Funkin -->
-        <div class="col-md-6 col-lg-4">
-          <div class="project-card">
-            <div class="card-img-wrapper">
-              <img src="https://img.itch.zone/aW1hZ2UvOTU0NzY0LzU0MTI0OTUucG5n/250x600/2bctq7.png" alt="Retro Night Funkin">
-            </div>
-            <div class="card-body-custom">
-              <div class="card-title-custom">Retro Night Funkin</div>
-              <p class="text-muted mb-3">Fast-paced rhythm game developed for Retro Jam featuring custom audio sync.</p>
-              <a href="https://gabutgaming.itch.io/retro-night-fukin" target="_blank" class="btn-action-primary mt-auto">
-                <i class="fa fa-play"></i> Play Game
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Losing The Treasure -->
-        <div class="col-md-6 col-lg-4">
-          <div class="project-card">
-            <div class="card-img-wrapper">
-              <img src="https://img.itch.zone/aW1nLzUyODUwOTkucG5n/315x250%23c/jrVPvi.png" alt="Losing The Treasure">
-            </div>
-            <div class="card-body-custom">
-              <div class="card-title-custom">Losing The Treasure</div>
-              <p class="text-muted mb-3">Global Game Jam 2021 puzzle adventure game featuring custom tilemaps.</p>
-              <a href="https://gabutgaming.itch.io/losing-the-treasure" target="_blank" class="btn-action-primary mt-auto">
-                <i class="fa fa-play"></i> Play Game
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Root Path -->
-        <div class="col-md-6 col-lg-4">
-          <div class="project-card">
-            <div class="card-img-wrapper">
-              <img src="https://img.itch.zone/aW1nLzExMjgyODAxLnBuZw==/315x250%23c/MJ7zvY.png" alt="Root Path">
-            </div>
-            <div class="card-body-custom">
-              <div class="card-title-custom">Root Path</div>
-              <p class="text-muted mb-3">Global Game Jam 2023 strategy game featuring procedural root pathfinding.</p>
-              <a href="https://gabutgaming.itch.io/root-path" target="_blank" class="btn-action-primary mt-auto">
-                <i class="fa fa-play"></i> Play Game
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Yower -->
-        <div class="col-md-6 col-lg-4">
-          <div class="project-card">
-            <div class="card-img-wrapper">
-              <img src="https://img.itch.zone/aW1nLzU1MjI5MTAucG5n/315x250%23c/%2Bg6782.png" alt="Yower">
-            </div>
-            <div class="card-body-custom">
-              <div class="card-title-custom">Yower</div>
-              <p class="text-muted mb-3">GEO Jam arcade physics survival game with custom shader effects.</p>
-              <a href="https://gabutgaming.itch.io/yower" target="_blank" class="btn-action-primary mt-auto">
-                <i class="fa fa-play"></i> Play Game
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- A Week Before -->
-        <div class="col-md-6 col-lg-4">
-          <div class="project-card">
-            <div class="card-img-wrapper">
-              <img src="https://img.itch.zone/aW1hZ2UvMTY0NzA0NC85Njg5ODQ1LnBuZw==/250x600/R9O3jj.png" alt="A Week Before">
-            </div>
-            <div class="card-body-custom">
-              <div class="card-title-custom">A Week Before</div>
-              <p class="text-muted mb-3">Thesis Capstone: Atmospheric 3D story-driven game with interactive narrative mechanics.</p>
-              <a href="https://gabutgaming.itch.io/a-week-before" target="_blank" class="btn-action-primary mt-auto">
-                <i class="fa fa-play"></i> Play Game
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Career & Education Section -->
-  <section id="career-section" class="py-5">
-    <div class="container">
-      <div class="text-center mb-5">
-        <div id="skill-chart-title">Education &amp; Experience</div>
-        <p class="text-muted">My background in software engineering and game development</p>
-      </div>
-
-      <div class="row g-4">
-        <div class="col-md-6">
-          <div class="career-card h-100">
-            <div class="career-role">B.App.Sc (Applied Science)</div>
-            <div class="career-org">Software Engineering &amp; Game Programming</div>
-            <div class="career-period">Bachelor Degree</div>
-            <p>Comprehensive training in gameplay architecture, C# / C++ performance design, OpenGL computer graphics, algorithms, and SQL database management.</p>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="career-card h-100">
-            <div class="career-role">Game &amp; Fullstack Developer</div>
-            <div class="career-org">2+ Years Professional &amp; Jam Experience</div>
-            <div class="career-period">Development Experience</div>
-            <p>Built multiple published titles in Unity and Unreal. Specialized in 2D/3D mechanics, shader graph, Blender asset creation, and responsive web frontend development.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills Bar Charts Section -->
-  <section id="skills-section" class="py-5">
-    <div class="container">
-      <div class="text-center mb-5">
-        <div id="skill-chart-title">Technical Skill Spectrum</div>
-        <p class="text-muted">Languages, Engines, Tools &amp; Frameworks</p>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-6 mb-4">
-          <div id="skill-chart-title" style="font-size: 2rem; text-align: left;">Languages &amp; Core</div>
-          <div class="chart-parent chart-horizontal">
-            <div class="metric" style="width:85%">C# <span class="metric-value">85%</span></div>
-            <div class="metric" style="width:80%">HTML5 / CSS3 <span class="metric-value">80%</span></div>
-            <div class="metric" style="width:80%">JavaScript <span class="metric-value">80%</span></div>
-            <div class="metric" style="width:75%">C / C++ <span class="metric-value">75%</span></div>
-            <div class="metric" style="width:70%">SQL Server <span class="metric-value">70%</span></div>
-            <div class="metric" style="width:65%">GLSL <span class="metric-value">65%</span></div>
-          </div>
-        </div>
-
-        <div class="col-lg-6 mb-4">
-          <div id="skill-chart-title" style="font-size: 2rem; text-align: left;">Engines &amp; Tools</div>
-          <div class="chart-parent chart-horizontal">
-            <div class="metric" style="width:90%">Unity <span class="metric-value">90%</span></div>
-            <div class="metric" style="width:85%">Blender 3D <span class="metric-value">85%</span></div>
-            <div class="metric" style="width:85%">Aseprite <span class="metric-value">85%</span></div>
-            <div class="metric" style="width:85%">Git <span class="metric-value">85%</span></div>
-            <div class="metric" style="width:75%">Unreal Engine <span class="metric-value">75%</span></div>
-            <div class="metric" style="width:70%">Godot Engine <span class="metric-value">70%</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact-section" class="py-5">
-    <div class="container text-center">
-      <div id="skill-chart-title">Get In Touch</div>
-      <p class="text-muted mb-4">Interested in collaborating or hiring? Reach out anytime!</p>
-
-      <div class="contact-container">
-        <div class="d-flex flex-wrap justify-content-center gap-3">
-          <a href="mailto:str.rnl.kom@protonmail.com" class="contact-badge">
-            <i class="fa fa-envelope"></i> str.rnl.kom@protonmail.com
-          </a>
-          <a href="https://www.linkedin.com/in/renaldy-rahadiansyah-40413a210" target="_blank" class="contact-badge">
-            <i class="fa fa-linkedin"></i> LinkedIn Profile
-          </a>
-          <a href="https://github.com/reandlyarahdian" target="_blank" class="contact-badge">
-            <i class="fa fa-github"></i> GitHub Profile
-          </a>
-          <a href="https://discord.com/users/375842508711919617" target="_blank" class="contact-badge">
-            <i class="fa fa-comments"></i> Discord
-          </a>
-        </div>
-      </div>
     </div>
   </section>
 
