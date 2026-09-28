@@ -217,6 +217,19 @@ const CareerPages = [
   // 1: Work Experience
   `
     <div class="career-card">
+      <div class="career-role">Roblox Game Developer</div>
+      <div class="career-org">Satu Visi Digital | Jakarta</div>
+      <div class="career-period">Juli 2026 hingga September 2026</div>
+      <ul>
+        <li><strong>UI &amp; Frontend Development:</strong> Engineered modular, responsive front-end UI systems across mobile and desktop Roblox clients, structuring HUDs, shop interfaces, and inventory layouts using Roact/Fusion frameworks for maximum layout adaptivity.</li>
+        <li><strong>UI Logic &amp; Tween Animations:</strong> Scripted client-side interface state machines and rich visual transitions via TweenService, integrating dynamic popups, interactive upgrade menus, and sound-cued HUD alerts to enhance UX feedback loops.</li>
+        <li><strong>Branded Experience Delivery (Paddle Pop):</strong> Optimized gameplay loops, bug-fixed client-server bottlenecks, and finalized production builds to successfully launch a branded promotional game for Paddle Pop, driving player retention and smooth cross-platform performance.</li>
+        <li><strong>Dynamic Weather System:</strong> Developed an environmental controller managing dynamic day-night cycles, volumetric lighting transitions, atmospheric effects, and server-replicated weather conditions (rain, storms, clear skies) with zero frame-drop impact.</li>
+        <li><strong>Alien Event &amp; Cinematic Sequences:</strong> Programmed scripted world event sequences featuring an alien encounter, orchestrating synchronized camera choreography via CurrentCamera manipulation, lighting shifts, sound cues, and multi-actor cutscene timings.</li>
+        <li><strong>Character Animation Implementation:</strong> Integrated character animation controllers and state blenders, implementing custom rigs, action-triggered KeyframeSequences, and emote loops using the Animator API to deliver fluid avatar interactions.</li>
+      </ul>
+    </div>
+    <div class="career-card">
       <div class="career-role">Game & Fullstack Developer</div>
       <div class="career-org">2+ Years Active Development</div>
       <div class="career-period">Independent & Team Collaborations</div>
