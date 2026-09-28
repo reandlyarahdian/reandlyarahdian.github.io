@@ -294,13 +294,13 @@ const SectionPages = {
 const CareerPages = [
   // 0: Work Experience
   `
-  <div class="career-card">
+    <div class="career-card">
       <div class="career-role">
         Roblox Game Developer
         <span class="career-badge">Roblox / Luau</span>
       </div>
       <div class="career-org">Satu Visi Digital — Jakarta</div>
-      <div class="career-period">Juli 2026 hingga September 2026</div>
+      <div class="career-period">Juli 2026 to September 2026</div>
       <ul>
         <li><strong>UI &amp; Frontend Development:</strong> Engineered modular, responsive front-end UI systems across mobile and desktop Roblox clients, structuring HUDs, shop interfaces, and inventory layouts using Roact/Fusion frameworks for maximum layout adaptivity.</li>
         <li><strong>UI Logic &amp; Tween Animations:</strong> Scripted client-side interface state machines and rich visual transitions via TweenService, integrating dynamic popups, interactive upgrade menus, and sound-cued HUD alerts to enhance UX feedback loops.</li>
