@@ -159,6 +159,44 @@ const ProjectsData = [
     url: "https://gabutgaming.itch.io/my-task",
     desc: "A casual task-oriented interactive web game exploring procedural goal fulfillment and UI state interactions.",
     tech: "JavaScript, HTML5, CSS3"
+  },
+  {
+    title: "Geometry Learning AR — Unity",
+    tags: ["Augmented Reality", "Unity", "C#", "Education"],
+    image: "./assets/showcase/unity-ar-poster.jpg",
+    video: "./assets/showcase/ar-showcase.mp4",
+    clipStart: 0,
+    clipEnd: 65,
+    clipLabel: "Unity AR segment · approx. 0:00–1:05",
+    desc: "An educational AR prototype that brings 3D geometric solids into view and lets learners explore shapes, nets, faces, edges, vertices, and formulas.",
+    tech: "Unity, C#"
+  },
+  {
+    title: "MindAR Web AR",
+    tags: ["Augmented Reality", "MindAR", "WebAR", "JavaScript"],
+    image: "./assets/showcase/mindar-poster.jpg",
+    video: "./assets/showcase/ar-showcase.mp4",
+    clipStart: 65,
+    clipEnd: 90,
+    clipLabel: "MindAR segment · approx. 1:05–1:30",
+    desc: "A browser-based AR demo that uses a phone camera to recognize a visual target and show digital content in the real-world view.",
+    tech: "MindAR, JavaScript, HTML, WebAR"
+  },
+  {
+    title: "Sci-Fi Security VR — Unity",
+    tags: ["Virtual Reality", "Unity", "C#", "XR"],
+    image: "./assets/showcase/vr-poster.jpg",
+    video: "./assets/showcase/vr-showcase.mp4",
+    desc: "A first-person sci-fi security experience with level progression, scoring, and an immersive 3D environment. The showcase includes Unity's XR Device Simulator.",
+    tech: "Unity, C#, XR Device Simulator"
+  },
+  {
+    title: "Roblox Simulator Gameplay",
+    tags: ["Roblox", "Roblox Studio", "Luau", "Gameplay"],
+    image: "./assets/showcase/roblox-poster.jpg",
+    video: "./assets/showcase/roblox-showcase.mp4",
+    desc: "A gameplay showcase of a Roblox simulator experience, featuring in-world play, progression, currency, and a shop and upgrade interface.",
+    tech: "Roblox Studio, Luau"
   }
 ];
 
@@ -167,6 +205,18 @@ const SectionPages = {
     <hr class="retro-hr">
     <div id="pt">Select a project icon below to inspect details!</div>
     <div id="proj-button-section">
+      <div id="proj-btn-11" class="proj-button" onclick="LoadProject(this, 11)" title="Geometry Learning AR — Unity">
+        <img class="proj-button-img" src="./assets/showcase/unity-ar-poster.jpg" alt="Unity geometry AR showcase">
+      </div>
+      <div id="proj-btn-12" class="proj-button" onclick="LoadProject(this, 12)" title="MindAR Web AR">
+        <img class="proj-button-img" src="./assets/showcase/mindar-poster.jpg" alt="MindAR web AR showcase">
+      </div>
+      <div id="proj-btn-13" class="proj-button" onclick="LoadProject(this, 13)" title="Sci-Fi Security VR — Unity">
+        <img class="proj-button-img" src="./assets/showcase/vr-poster.jpg" alt="Unity VR showcase">
+      </div>
+      <div id="proj-btn-14" class="proj-button" onclick="LoadProject(this, 14)" title="Roblox Simulator Gameplay">
+        <img class="proj-button-img" src="./assets/showcase/roblox-poster.jpg" alt="Roblox gameplay showcase">
+      </div>
       <div id="proj-btn-0" class="proj-button" onclick="LoadProject(this, 0)" title="SnakeJS">
         <img class="proj-button-img" src="./assets/Snake.png" alt="SnakeJS">
       </div>
@@ -498,8 +548,8 @@ function selectTab(tabName, forceOpen = false) {
     selectionArea.style.opacity = "1";
 
     if (tabName === 'projects') {
-      // Auto-load first project by default
-      LoadProject(document.getElementById('proj-btn-0'), 0);
+      // Auto-load the newest showcase by default
+      LoadProject(document.getElementById('proj-btn-11'), 11);
     } else if (tabName === 'career') {
       // Auto-load work experience by default
       LoadCareer(document.getElementById('work-Button'), 0);
@@ -536,18 +586,33 @@ function LoadProject(buttonEl, index) {
   projArea.style.opacity = "0";
   setTimeout(() => {
     const tagsHTML = data.tags.map(t => `<span class="project-tag">${t}</span>`).join("");
+    const mediaHTML = data.video
+      ? `<video id="project-showcase-video" class="project-video-preview" controls playsinline preload="metadata" poster="${data.image}" aria-label="${data.title} showcase video"><source src="${data.video}" type="video/mp4">Your browser does not support HTML video.</video>${data.clipLabel ? `<p class="project-video-caption">${data.clipLabel}</p>` : ""}`
+      : `<img class="project-img-preview" src="${data.image}" alt="${data.title}">`;
+    const actionHTML = data.video
+      ? `<span class="project-video-hint"><i class="fa fa-play-circle"></i> Use the video controls to watch the showcase</span>`
+      : `<a href="${data.url}" target="_blank" rel="noopener noreferrer" class="btn-action-primary"><i class="fa fa-play-circle"></i> Play Game on itch.io</a>`;
     projArea.innerHTML = `
       <div class="project-detail-card">
         <div class="project-detail-title">${data.title}</div>
         <div class="mb-3">${tagsHTML}</div>
-        <img class="project-img-preview" src="${data.image}" alt="${data.title}">
+        ${mediaHTML}
         <p class="fs-5 mb-3" style="color: var(--text-main);">${data.desc}</p>
         <p class="mb-4" style="color: var(--text-muted);"><strong style="color: var(--cyber-cyan);">Technologies Used:</strong> <span style="color: var(--text-main);">${data.tech}</span></p>
-        <a href="${data.url}" target="_blank" class="btn-action-primary">
-          <i class="fa fa-play-circle"></i> Play Game on itch.io
-        </a>
+        ${actionHTML}
       </div>
     `;
+    const showcaseVideo = document.getElementById("project-showcase-video");
+    if (showcaseVideo && data.clipStart !== undefined) {
+      showcaseVideo.addEventListener("loadedmetadata", () => {
+        showcaseVideo.currentTime = data.clipStart;
+      }, { once: true });
+      showcaseVideo.addEventListener("timeupdate", () => {
+        if (data.clipEnd && showcaseVideo.currentTime >= data.clipEnd) {
+          showcaseVideo.pause();
+        }
+      });
+    }
     projArea.style.opacity = "1";
   }, 200);
 }
